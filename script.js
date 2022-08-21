@@ -85,10 +85,10 @@ const whichIsLarger = function (arrow1, arrow2) {
   }
 };
 
-whichIsLarger(
-  () => 15,
-  () => 15
-);
+// whichIsLarger(
+//   () => 15,
+//   () => 15
+// );
 
 /*
 Create a function that returns true if the first array can be nested inside the second.
@@ -134,4 +134,39 @@ const canNest = function (array1, array2) {
   }
 };
 
-canNest([1, 2, 3, 4], [0, 6]);
+// canNest([1, 2, 3, 4], [0, 6]);
+
+/*
+Drink Sorting
+
+You will be given an array of drinks, with each drink being an object with two properties: name and price. 
+Create a function that has the drinks array as an argument and return the drinks objects sorted by price in ascending order.
+
+Assume that the following array of drink objects needs to be sorted:
+
+drinks = [
+  {name: "lemonade", price: 50},
+  {name: "lime", price: 10}
+]
+
+The output of the sorted drinks object will be:
+Examples
+
+sortDrinkByPrice(drinks) ➞ [{name: "lime", price: 10}, {name: "lemonade", price: 50}]
+
+*/
+
+const sortDrinkByPrice = function (drinks) {
+  drinks.sort((a, b) => {
+    return a.price - b.price;
+  });
+
+  return drinks;
+};
+
+console.log(
+  sortDrinkByPrice([
+    { name: 'lemonade', price: 50 },
+    { name: 'lime', price: 10 },
+  ])
+);
