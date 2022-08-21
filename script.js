@@ -164,9 +164,42 @@ const sortDrinkByPrice = function (drinks) {
   return drinks;
 };
 
-console.log(
-  sortDrinkByPrice([
-    { name: 'lemonade', price: 50 },
-    { name: 'lime', price: 10 },
-  ])
-);
+// console.log(
+//   sortDrinkByPrice([
+//     { name: 'lemonade', price: 50 },
+//     { name: 'lime', price: 10 },
+//     { name: 'orange-juice', price: 30 },
+//     { name: 'beer', price: 40 },
+//     { name: 'cofee', price: 70 },
+//     { name: 'coke', price: 100 },
+//     { name: 'gin-tonik', price: 150 },
+//     { name: 'milk', price: 20 },
+//   ])
+// );
+
+/*
+Tuck in Array
+
+Create a function that takes two arrays and insert the second array in the middle of the first array.
+Examples
+
+tuckIn([1, 10], [2, 3, 4, 5, 6, 7, 8, 9]) ➞ [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+tuckIn([15,150], [45, 75, 35]) ➞ [15, 45, 75, 35, 150]
+
+tuckIn([[1, 2], [5, 6]], [[3, 4]]) ➞ [[1, 2], [3, 4], [5, 6]]
+
+Notes
+  -The first array always has two elements.
+*/
+
+const tuckIn = function (array1, array2) {
+  const firstElementArr = array1.shift();
+  const lastElementtArr = array1.pop();
+  const combineArray = [...array1, ...array2];
+  combineArray.unshift(firstElementArr);
+  combineArray.push(lastElementtArr);
+  return combineArray;
+};
+
+// console.log(tuckIn([1, 10], [2, 3, 4, 5, 6, 7, 8, 9]));
