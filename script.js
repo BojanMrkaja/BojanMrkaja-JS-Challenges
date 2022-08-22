@@ -237,4 +237,26 @@ Notes
 const equals = (arr1, arr2) =>
   arr1.length === arr2.length && arr1.some((element, i) => element > arr2[i]);
 
-console.log(equals([true, 10, 'zebra'], [true, 10, 'zebra']));
+// console.log(equals([true, 10, 'zebra'], [true, 10, 'zebra']));
+
+/*
+Count Instances of a Character in a String
+
+Create a function that takes two strings as arguments and returns the number of 
+times the first string (the single character) is found in the second string.
+
+Examples
+
+charCount("a", "edabit") ➞ 1
+
+charCount("c", "Chamber of secrets") ➞ 1
+
+charCount("b", "big fat bubble") ➞ 4
+*/
+
+const charCount = function (myChar, string) {
+  const stringToArr = string.split('');
+  return stringToArr.filter(char => char === myChar).length;
+};
+
+console.log(charCount('b', 'big fat bubble'));
