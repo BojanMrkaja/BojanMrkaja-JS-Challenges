@@ -443,3 +443,62 @@ const spotlightSum = function (number) {
 };
 
 console.log(spotlightSum(48));
+
+/*
+Sort by String Length
+
+Create a function that returns an array of strings sorted by length in ascending order.
+Examples
+
+sortByLength(["a", "ccc", "dddd", "bb"]) ➞ ["a", "bb", "ccc", "dddd"]
+
+sortByLength(["apple", "pie", "shortcake"]) ➞ ["pie", "apple", "shortcake"]
+
+sortByLength(["may", "april", "september", "august"]) ➞ ["may", "april", "august", "september"]
+
+sortByLength([]) ➞ []
+
+Notes
+
+    Strings will have unique lengths, so don't worry about comparing two strings with identical length.
+    Return an empty array if the input array is empty (see example #4).
+
+*/
+
+const sortString = function (arr) {
+  return arr.sort((a, b) => a.length - b.length);
+};
+
+console.log(sortString(['apple', 'pie', 'shortcake']));
+
+/*
+Number Split
+
+Given a number, return an array containing the two halves of the number. If the number is odd, make the rightmost number higher.
+Examples
+
+numberSplit(4) ➞ [2, 2]
+
+numberSplit(10) ➞ [5, 5]
+
+numberSplit(11) ➞ [5, 6]
+
+numberSplit(-9) ➞ [-5, -4]
+
+Notes
+
+    All numbers will be integers.
+    You can expect negative numbers too
+*/
+
+const numberSplit = function (num) {
+  let arr = [];
+  const floorNumber = Math.floor(num / 2);
+  const ceilNumber = Math.ceil(num / 2);
+
+  arr.push(floorNumber, ceilNumber);
+
+  return arr;
+};
+
+console.log(numberSplit(3));
