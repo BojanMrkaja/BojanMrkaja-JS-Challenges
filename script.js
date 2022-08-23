@@ -442,7 +442,7 @@ const spotlightSum = function (number) {
   }
 };
 
-console.log(spotlightSum(48));
+// console.log(spotlightSum(48));
 
 /*
 Sort by String Length
@@ -469,7 +469,7 @@ const sortString = function (arr) {
   return arr.sort((a, b) => a.length - b.length);
 };
 
-console.log(sortString(['apple', 'pie', 'shortcake']));
+// console.log(sortString(['apple', 'pie', 'shortcake']));
 
 /*
 Number Split
@@ -501,4 +501,38 @@ const numberSplit = function (num) {
   return arr;
 };
 
-console.log(numberSplit(3));
+// console.log(numberSplit(3));
+
+/*
+Highest Digit
+
+Create a function that takes a number as an argument and returns the highest digit in that number.
+Examples
+
+highestDigit(379) ➞ 9
+
+highestDigit(2) ➞ 2
+
+highestDigit(377401) ➞ 7
+
+*/
+
+const highestDigit = function (number) {
+  const toArr = String(number)
+    .split('')
+    .map(num => {
+      return Number(num);
+    });
+
+  let highestNum = toArr[0];
+
+  toArr.forEach(element => {
+    if (element > highestNum) {
+      highestNum = element;
+    }
+  });
+
+  return highestNum;
+};
+
+console.log(highestDigit(377401));
