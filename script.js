@@ -419,19 +419,27 @@ const numGrid = [
 
 let num1, num2, num3, num4, num5, num6, num7, num8;
 
+const surroundingNumbers = [];
+
 const spotlightSum = function (number) {
-  num1 = number - 1;
-  num2 = number + 1;
-  num3 = number - numGrid.length;
-  num4 = num3 - 1;
-  num5 = num3 + 1;
-  num6 = number + numGrid.length;
-  num7 = num6 - 1;
-  num8 = num6 + 1;
+  if (typeof number === 'number') {
+    if (number < 1 || number > 100) {
+      console.log('Pass number between 1 and 100');
+    } else {
+      num1 = number - 1;
+      num2 = number + 1;
+      num3 = number - numGrid.length;
+      num4 = num3 - 1;
+      num5 = num3 + 1;
+      num6 = number + numGrid.length;
+      num7 = num6 - 1;
+      num8 = num6 + 1;
 
-  const sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + number;
-
-  return sum;
+      return num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + number;
+    }
+  } else {
+    console.log('Enter valid namber');
+  }
 };
 
-console.log(spotlightSum(88));
+console.log(spotlightSum(48));
