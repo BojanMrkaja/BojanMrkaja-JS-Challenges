@@ -768,4 +768,44 @@ const findBomb = function (str) {
   return result;
 };
 
-console.log(findBomb('This goes boom'));
+// console.log(findBomb('This goes boom'));
+
+/*
+Remove Every Vowel from a String
+
+Create a function that takes a string and returns a new string with all vowels removed.
+Examples
+
+removeVowels("I have never seen a thin person drinking Diet Coke.")
+➞ " hv nvr sn  thn prsn drnkng Dt Ck."
+
+removeVowels("We're gonna build a wall!")
+➞ "W'r gnn bld  wll!"
+
+removeVowels("Happy Thanksgiving to all--even the haters and losers!")
+➞ "Hppy Thnksgvng t ll--vn th htrs nd lsrs!"
+
+Notes
+
+"y" is not considered a vowel.
+
+*/
+
+const removeVowels = function (string) {
+  string = string.toLowerCase();
+  let toArr = string.split('');
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  for (let i = 0; i < toArr.length; i++) {
+    if (vowels.some(element => element === toArr[i])) {
+      toArr.splice(i, 1);
+      i--;
+    }
+  }
+
+  return toArr.join('');
+};
+
+console.log(
+  removeVowels('I have never seen a thin person drinking Diet Coke.')
+);
