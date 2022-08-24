@@ -535,7 +535,7 @@ const highestDigit = function (number) {
   return highestNum;
 };
 
-console.log(highestDigit(377401));
+// console.log(highestDigit(377401));
 
 /*
 Even All the Way
@@ -559,4 +559,48 @@ const getOnlyEvens = function (array) {
   return array.filter(num => num % 2 === 0);
 };
 
-console.log(getOnlyEvens([1, 3, 2, 6, 4, 8]));
+// console.log(getOnlyEvens([1, 3, 2, 6, 4, 8]));
+
+/*
+How Many Vowels?
+
+Create a function that takes a string and returns the number (count) of vowels contained within it.
+Examples
+
+countVowels("Celebration") ➞ 5
+
+countVowels("Palm") ➞ 1
+
+countVowels("Prediction") ➞ 4
+
+Notes
+
+    a, e, i, o, u are considered vowels (not y).
+    All test cases are one word and only contain letters.
+
+*/
+
+const countVowels = function (string) {
+  string = string.toLowerCase();
+  const stringToArr = string.split('');
+  let count = 0;
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  for (let index = 0; index < stringToArr.length; index++) {
+    if (vowels.some(element => element === stringToArr[index])) {
+      count++;
+    }
+  }
+
+  // stringToArr.forEach((el, index) => {
+  //   if (vowels.some(element => element === stringToArr[index])) {
+  //     count++;
+  //   }
+  // });
+
+  console.log(count);
+
+  return count;
+};
+
+countVowels('Celebration');
