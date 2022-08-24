@@ -603,7 +603,7 @@ const countVowels = function (string) {
   return count;
 };
 
-countVowels('Celebration');
+// countVowels('Celebration');
 
 /*
 Repeat a String n Number of Times
@@ -635,4 +635,31 @@ const repetition = function (string, num) {
   return repeatedString;
 };
 
-console.log(repetition('cherry', 2));
+// console.log(repetition('cherry', 2));
+
+/*
+Sort an Array by String Length
+
+Create a function that takes an array of strings and return an array, sorted from shortest to longest.
+Examples
+
+sortByLength(["Google", "Apple", "Microsoft"])
+➞ ["Apple", "Google", "Microsoft"]
+
+sortByLength(["Leonardo", "Michelangelo", "Raphael", "Donatello"])
+➞ ["Raphael", "Leonardo", "Donatello", "Michelangelo"]
+
+sortByLength(["Turing", "Einstein", "Jung"])
+➞ ["Jung", "Turing", "Einstein"]
+
+Notes
+
+All test cases contain arrays with strings of different lengths, so you won't have to deal with multiple strings of the same length.
+
+*/
+
+const sortByLength = function (array) {
+  return array.sort((a, b) => a.length - b.length);
+};
+
+console.log(sortByLength(['Turing', 'Einstein', 'Jung']));
