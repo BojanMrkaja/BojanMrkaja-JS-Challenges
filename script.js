@@ -536,3 +536,27 @@ const highestDigit = function (number) {
 };
 
 console.log(highestDigit(377401));
+
+/*
+Even All the Way
+
+Given an array of numbers, return an array which contains all the even numbers in the original array, which also have even indices.
+Examples
+
+getOnlyEvens([1, 3, 2, 6, 4, 8]) ➞ [2, 4]
+
+getOnlyEvens([0, 1, 2, 3, 4]) ➞ [0, 2, 4]
+
+getOnlyEvens([1, 2, 3, 4, 5]) ➞ []
+
+Notes
+
+Arrays start at index 0.
+
+*/
+
+const getOnlyEvens = function (array) {
+  return array.filter(num => num % 2 === 0);
+};
+
+console.log(getOnlyEvens([1, 3, 2, 6, 4, 8]));
