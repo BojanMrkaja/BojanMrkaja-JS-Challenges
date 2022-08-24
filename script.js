@@ -699,4 +699,73 @@ const sortNumsAscending = function (arr) {
   }
 };
 
-console.log(sortNumsAscending([80, 29, 4, -95, -24, 85]));
+// console.log(sortNumsAscending([80, 29, 4, -95, -24, 85]));
+
+/*
+Is the Average of All Elements a Whole Number?
+
+Create a function that takes an array as an argument and returns true or false depending on whether the average of all 
+elements in the array is a whole number or not.
+
+
+Examples
+
+isAvgWhole([1, 3]) ➞ true
+
+isAvgWhole([1, 2, 3, 4]) ➞ false
+
+isAvgWhole([1, 5, 6]) ➞ true
+
+isAvgWhole([1, 1, 1]) ➞ true
+
+isAvgWhole([9, 2, 2, 5]) ➞ false
+
+*/
+
+const isAvgWhole = function (array) {
+  let average = 0;
+  let result = false;
+
+  array.forEach(element => {
+    average += element / array.length;
+  });
+
+  console.log(average);
+
+  average === Math.floor(average) ? (result = true) : (result = false);
+
+  return result;
+};
+
+// console.log(isAvgWhole([1, 2, 3, 4]));
+
+/*
+Find the Bomb
+
+Create a function that finds the word "bomb" in the given string (not case sensitive). If found, return "Duck!!!", otherwise return "There is no bomb, relax.".
+Examples
+
+bomb("There is a bomb.") ➞ "Duck!!!"
+
+bomb("Hey, did you think there is a bomb?") ➞ "Duck!!!"
+
+bomb("This goes boom!!!") ➞ "There is no bomb, relax."
+
+Notes
+
+"bomb" may appear in different cases (i.e. uppercase, lowercase, mixed).
+
+*/
+
+const findBomb = function (str) {
+  str = str.toLowerCase();
+  let result;
+
+  str.includes('bomb')
+    ? (result = 'Duck!!!')
+    : (result = 'There is no bomb, relax.');
+
+  return result;
+};
+
+console.log(findBomb('This goes boom'));
