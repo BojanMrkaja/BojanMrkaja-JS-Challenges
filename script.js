@@ -830,7 +830,7 @@ Watch out for negative integers (numbers).
 
 const findLargestNums = function (arr) {
   const newArr = [];
-  const [one, two, three] = arr;
+
   const maxValeu = function (array) {
     let max = array[0];
     array.forEach(element => {
@@ -841,9 +841,9 @@ const findLargestNums = function (arr) {
     return newArr.push(max);
   };
 
-  maxValeu(one);
-  maxValeu(two);
-  maxValeu(three);
+  arr.forEach((el, i) => {
+    maxValeu(arr[i]);
+  });
 
   return newArr;
 };
@@ -853,5 +853,8 @@ console.log(
     [-34, -54, -74],
     [-32, -2, -65],
     [-54, 7, -43],
+    [1, 2, , 3, 4],
+    [1, 2, , 3, 5, 6, 7],
+    [1, 2, , 3, 5, 6, 8],
   ])
 );
