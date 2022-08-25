@@ -957,4 +957,43 @@ const set = function (arr) {
 //0 === 0 true, 1 === 1 true, 1 === 2 false , 3 === 3 true, 4 === 4 true , 1 === 5 false, 1 ===6 false, 1===7 false
 // [1, 3, 5, 4];
 
-console.log(set([1, 3, 3, 5, 4, 3, 3, 3]));
+// console.log(set([1, 3, 3, 5, 4, 3, 3, 3]));
+
+/*
+Say "Hello" Say "Bye"
+
+Write a function that takes a string name and a number num (either 0 or 1) and return "Hello" + name if num is 1, otherwise return "Bye" + name.
+Examples
+
+sayHelloBye("alon", 1) ➞ "Hello Alon"
+
+sayHelloBye("Tomi", 0) ➞ "Bye Tomi"
+
+sayHelloBye("jose", 0) ➞ "Bye Jose"
+
+Notes
+
+The name you return must be capitalized.
+
+*/
+
+const sayHelloBye = function (name, num) {
+  if (typeof name === 'string' && typeof num === 'number') {
+    if (num === 1 || num === 0) {
+      let result = '';
+      const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1);
+
+      num === 1
+        ? (result = `Hello ${nameCapitalized}`)
+        : (result = `Bye ${nameCapitalized}`);
+
+      return result;
+    } else {
+      console.log('Number must be 0 or 1');
+    }
+  } else {
+    console.log('Passed valeu mus be number and string.Try again!!!');
+  }
+};
+
+console.log(sayHelloBye('teodora', 1));
