@@ -834,16 +834,12 @@ const findLargestNums = function (arr) {
   const maxValeu = function (array) {
     let max = array[0];
     array.forEach(element => {
-      if (element > max) {
-        max = element;
-      }
+      element > max ? (max = element) : undefined;
     });
     return newArr.push(max);
   };
 
-  arr.forEach((el, i) => {
-    maxValeu(arr[i]);
-  });
+  arr.forEach(el => maxValeu(el));
 
   return newArr;
 };
@@ -856,5 +852,6 @@ console.log(
     [1, 2, , 3, 4],
     [1, 2, , 3, 5, 6, 7],
     [1, 2, , 3, 5, 6, 8],
+    [1, 2, , 3, 5, 6, 8, 10],
   ])
 );
