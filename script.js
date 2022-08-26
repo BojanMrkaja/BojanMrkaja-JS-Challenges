@@ -1045,18 +1045,20 @@ checkTitle("A Simple Java Script Program!") ➞ true
 
 checkTitle("Water is transparent") ➞ false
 */
+const checkTitle = function (string) {
+  let stringArr = string.split(' ');
+  let isUpperCase;
 
-let string = 'Water is transparent';
-let stringArr = string.split(' ');
-let isUpperCase;
+  if (stringArr.every(el => el[0] === el[0].toUpperCase())) {
+    isUpperCase = true;
+  } else {
+    isUpperCase = false;
+  }
 
-if (stringArr.every(el => el[0] === el[0].toUpperCase())) {
-  isUpperCase = true;
-} else {
-  isUpperCase = false;
-}
+  return isUpperCase;
+};
 
-// console.log(isUpperCase);
+// console.log(checkTitle('Water is transparent'));
 
 /*
 Hashes and Pluses
@@ -1095,4 +1097,44 @@ const hashPlusCount = function (string) {
   return result;
 };
 
-console.log(hashPlusCount('#+++#+#++#'));
+// console.log(hashPlusCount('#+++#+#++#'));
+
+/*
+Video Length in Seconds
+
+You are given the length of a video in minutes. The format is mm:ss (e.g.: "02:54"). 
+Create a function that takes the video length and return it in seconds.
+Examples
+
+minutesToSeconds("01:00") ➞ 60
+
+minutesToSeconds("13:56") ➞ 836
+
+minutesToSeconds("10:60") ➞ false
+
+Notes
+
+    The video length is given as a string.
+    If the number of seconds is 60 or over, return false (see example #3).
+    You may get a number of minutes over 99 (e.g. "121:49" is perfectly valid).
+*/
+const minutesToSeconds = function (string) {
+  const stringToArr = string.split(':');
+  const numbers = [];
+  let seconds, minutes;
+
+  stringToArr.forEach(element => {
+    const toNumber = Number(element);
+    numbers.push(toNumber);
+  });
+  seconds = numbers[1];
+  minutes = numbers[0];
+
+  if (seconds >= 60) {
+    return false;
+  } else {
+    return minutes * 60 + seconds;
+  }
+};
+
+console.log(minutesToSeconds('13:70'));
