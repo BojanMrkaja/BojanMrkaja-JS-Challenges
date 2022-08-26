@@ -992,8 +992,44 @@ const sayHelloBye = function (name, num) {
       console.log('Number must be 0 or 1');
     }
   } else {
-    console.log('Passed valeu mus be number and string.Try again!!!');
+    console.log('Passed valeu must be number and string.Try again!!!');
   }
 };
 
-console.log(sayHelloBye('teodora', 1));
+// console.log(sayHelloBye('teodora', 1));
+
+/*
+Phone Number Formatting
+
+Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. (555) 555-5555).
+Examples
+
+formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) ➞ "(123) 456-7890"
+
+formatPhoneNumber([5, 1, 9, 5, 5, 5, 4, 4, 6, 8]) ➞ "(519) 555-4468"
+
+formatPhoneNumber([3, 4, 5, 5, 0, 1, 2, 5, 2, 7]) ➞ "(345) 501-2527"
+*/
+
+const formatPhoneNumber = function (arr) {
+  let str1 = '';
+  let str2 = '';
+  let str3 = '';
+  let result = ``;
+
+  arr.forEach((number, index) => {
+    const toString = String(number);
+
+    index >= 0 && index <= 2 ? (str1 += toString) : undefined;
+    index >= 3 && index <= 5 ? (str2 += toString) : undefined;
+    index >= 6 && index <= arr.length ? (str3 += toString) : undefined;
+  });
+
+  if (arr.some(number => number > 9) || arr.length > 10) {
+    console.log('error');
+  } else {
+    return (result = `"(${str1}) ${str2}-${str3}"`);
+  }
+};
+
+console.log(formatPhoneNumber([5, 1, 9, 5, 5, 5, 4, 4, 6, 9]));
