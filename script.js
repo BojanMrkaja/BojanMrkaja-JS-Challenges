@@ -947,7 +947,6 @@ set([3, 3, 3, 2, 1]) ➞ [1, 2, 3]
 
 const set = function (arr) {
   const noDDuplicates = arr.filter((element, index) => {
-    console.log(arr.indexOf(element), element, index);
     return arr.indexOf(element) === index;
   });
 
@@ -1032,4 +1031,68 @@ const formatPhoneNumber = function (arr) {
   }
 };
 
-console.log(formatPhoneNumber([5, 1, 9, 5, 5, 5, 4, 4, 6, 9]));
+// console.log(formatPhoneNumber([5, 1, 9, 5, 5, 5, 4, 4, 6, 9]));
+
+/*
+Check If It's a Title String
+
+Check if a string title is a title string or not. A title string is one which has all the words in the string start with a upper case letter.
+Examples
+
+checkTitle("A Mind Boggling Achievement") ➞ true
+
+checkTitle("A Simple Java Script Program!") ➞ true
+
+checkTitle("Water is transparent") ➞ false
+*/
+
+let string = 'Water is transparent';
+let stringArr = string.split(' ');
+let isUpperCase;
+
+if (stringArr.every(el => el[0] === el[0].toUpperCase())) {
+  isUpperCase = true;
+} else {
+  isUpperCase = false;
+}
+
+// console.log(isUpperCase);
+
+/*
+Hashes and Pluses
+
+
+Create a function that returns the number of hashes and pluses in a string.
+Examples
+
+hashPlusCount("###+") ➞ [3, 1]
+
+hashPlusCount("##+++#") ➞ [3, 3]
+
+hashPlusCount("#+++#+#++#") ➞ [4, 6]
+
+hashPlusCount("") ➞ [0, 0]
+
+Notes
+
+    Return [0, 0] for an empty string.
+    Return in the order of [hashes, pluses].
+*/
+
+const hashPlusCount = function (string) {
+  let hashes = 0;
+  let pluses = 0;
+  let result = [];
+  const stringToArr = string.split('');
+
+  stringToArr.forEach(element => {
+    element === '+' ? pluses++ : null;
+    element === '#' ? hashes++ : null;
+  });
+
+  result.push(hashes, pluses);
+
+  return result;
+};
+
+console.log(hashPlusCount('#+++#+#++#'));
