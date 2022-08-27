@@ -1293,4 +1293,39 @@ const spelling = function (str) {
   return newArr;
 };
 
-console.log(spelling('eagerly'));
+// console.log(spelling('eagerly'));
+
+/*
+Join Two Portions of a Path
+
+Write a function that receives two portions of a path and joins them. The portions will be joined with the "/" separator. There could be only one separator and if it is not present it should be added.
+Examples
+
+joinPath("portion1", "portion2") ➞ "portion1/portion2"
+
+joinPath("portion1/", "portion2") ➞ "portion1/portion2"
+
+joinPath("portion1", "/portion2") ➞ "portion1/portion2"
+
+joinPath("portion1/", "/portion2") ➞ "portion1/portion2"
+
+Notes
+
+Try not to solve this challenge using if-else conditions.
+
+*/
+
+const joinPath = function (portion1, portion2) {
+  const newStr1 = portion1
+    .split('')
+    .filter(el => el != '/')
+    .join('');
+  const newStr2 = portion2
+    .split('')
+    .filter(el => el != '/')
+    .join('');
+
+  return `${newStr1}/${newStr2}`;
+};
+
+console.log(joinPath('portion1/', '/portion2'));
